@@ -2,6 +2,12 @@
 
 Internal web application MVP for retrieving key researcher identifiers from a publication title.
 
+## Live demo
+
+Public deployment:
+
+- https://author-id-finder.onrender.com/
+
 ## What it does
 
 Given a publication title (plus optional author name, year, DOI), the app finds and displays:
@@ -78,7 +84,7 @@ CONTACT_EMAIL=...
 Render start command used by the app:
 
 ```bash
-streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
+streamlit run app.py --server.address 0.0.0.0 --server.port $PORT --server.headless true --server.enableCORS false --server.enableXsrfProtection false --browser.gatherUsageStats false
 ```
 
 Health check path:
