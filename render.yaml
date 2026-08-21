@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: author-id-finder
+    runtime: python
+    plan: free
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: CONTACT_EMAIL
+        sync: false
+      - key: SCOPUS_API_KEY
+        sync: false
+      - key: SERPAPI_API_KEY
+        sync: false
